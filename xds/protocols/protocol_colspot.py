@@ -43,7 +43,7 @@ class XdsProtColspot(EdProtFindSpots):
         form.addSection(label='Input')
 
         form.addParam('inputImages', pwprot.PointerParam,
-                      pointerClass='SetofDiffractionImages'
+                      pointerClass='SetofDiffractionImages',
                       label="Input diffraction images",
                       help="")
        # form.addParam('filesPattern', pwprot.StringParam,
