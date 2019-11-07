@@ -36,7 +36,7 @@ class XdsProtColspot(EdProtFindSpots):
     """Documentation
     """
 
-    _label = 'import diffraction images'
+    _label = 'Colspot (Find spots)'
 
     # -------------------------- DEFINE param functions -----------------------
     def _defineParams(self, form):
