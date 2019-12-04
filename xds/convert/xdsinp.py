@@ -40,10 +40,10 @@ def writeTemplate(inputImages, outputpath=None, **kwargs):
 
     ! ********** Data images **********
 
-    NAME_TEMPLATE_OF_DATA_FRAMES= {params.NameTemplate.get()}   SMV
-    DATA_RANGE=           {params.ImageRange.get()[0]} {params.ImageRange.get()[1]}
-    SPOT_RANGE=           {params.ImageRange.get()[0]} {params.ImageRange.get()[1]}
-    BACKGROUND_RANGE=     {params.ImageRange.get()[0]} {params.ImageRange.get()[1]}
+    NAME_TEMPLATE_OF_DATA_FRAMES= {params.get("NameTemplate")}   SMV
+    DATA_RANGE=           {params.get("ImageRange")[0]} {params.get("ImageRange")[1]}
+    SPOT_RANGE=           {params.get("ImageRange")[0]} {params.get("ImageRange")[1]}
+    BACKGROUND_RANGE=     {params.get("ImageRange")[0]} {params.get("ImageRange")[1]}
     EXCLUDE_DATA_RANGE=10 10
     EXCLUDE_DATA_RANGE=20 20
     EXCLUDE_DATA_RANGE=30 30

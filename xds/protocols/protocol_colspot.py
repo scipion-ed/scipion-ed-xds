@@ -81,7 +81,7 @@ class XdsProtColspot(EdProtFindSpots):
 
     # -------------------------- STEPS functions -------------------------------
 
-    def convertInputStep(self):
+    def convertInputStep(self, inputId):
         """ Write the XDS.INP file for running the Colspot job. """
         inputImages = self.inputImages.get()
         self.info("Number of images: %s" % inputImages.getSize())
