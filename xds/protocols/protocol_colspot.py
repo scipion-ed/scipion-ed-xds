@@ -28,8 +28,12 @@ import os
 import re
 from glob import glob
 
+import pyworkflow.protocol as pwprot
+
 from pwed.objects import DiffractionImage, SetOfDiffractionImages
 from pwed.protocols import EdProtFindSpots
+
+from xds.convert import writeTemplate
 
 
 class XdsProtColspot(EdProtFindSpots):
@@ -70,7 +74,8 @@ class XdsProtColspot(EdProtFindSpots):
 
     # -------------------------- INSERT functions ------------------------------
     def _insertAllSteps(self):
-        self._insertFunctionStep('convertInputStep', inputId)
+        self._insertFunctionStep(
+            'convertInputStep', self.inputImages.getObjId())
         self._insertFunctionStep('findSpotsStep')
         self._insertFunctionStep('createOutputStep')
 
@@ -78,15 +83,16 @@ class XdsProtColspot(EdProtFindSpots):
 
     def convertInputStep(self):
         """ Write the XDS.INP file for running the Colspot job. """
-        params = readSetofDiffractionImages(self.SetofDiffractionImages)
-        file = writeTemplate(params)
-        return file
+        inputImages = self.inputImages.get()
+        self.info("Number of images: %s" % inputImages.getSize())
+        writeTemplate(inputImages)
 
     def findSpotsStep(self):
         pass
 
     def createOutputStep(self):
-        self._defineOutputs(outputSetofSpots=outputSet)
+        pass
+        # self._defineOutputs(outputSetofSpots=outputSet)
 
     # -------------------------- INFO functions -------------------------------
     def _validate(self):
