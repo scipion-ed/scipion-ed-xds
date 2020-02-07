@@ -24,4 +24,4 @@
 # *
 # **************************************************************************
 
-from .viewers_data import EdDataViewer
+from .xds_viewers import XdsImageViewer
