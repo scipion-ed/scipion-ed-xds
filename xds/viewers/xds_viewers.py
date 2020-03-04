@@ -30,7 +30,6 @@ from pwed.objects import SetOfDiffractionImages
 
 class XdsImageViewer(pwviewer.Viewer):
     """ Wrapper to visualize different type of objects
-    with the Xmipp program xmipp_showj
     """
     _environments = [pwviewer.DESKTOP_TKINTER]
     _targets = [

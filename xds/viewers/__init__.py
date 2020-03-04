@@ -24,4 +24,4 @@
 # *
 # **************************************************************************
 
-from .xds_viewers import XdsImageViewer
+# from .xds_viewers import XdsImageViewer
